@@ -4,9 +4,9 @@ import { getApiResource } from '../../utils/network'
 import { API_PEOPLE } from '../../constants/api'
 import { getPeopleId, getPeopleImage } from '../../services/getPeopleData'
 import PeopleList from '../../components/peoplePage/peopleList/PeopleList'
-import { WithErrorApi } from '../../hoc-helpelrs/withErrorApi'
+import { withErrorApi } from '../../hoc-helpelrs/withErrorApi'
 
-const PeoplePage = () => {
+const PeoplePage = ({ setErrorApi }) => {
   const [people, setPeople] = useState(null)
 
 
@@ -45,4 +45,4 @@ const PeoplePage = () => {
   )
 }
 
-export default WithErrorApi(PeoplePage);
+export default withErrorApi(PeoplePage);
